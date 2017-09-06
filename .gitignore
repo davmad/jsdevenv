@@ -1,3 +1,16 @@
+# IDEs and editors
+*.launch
+.settings/
+.idea/
+.vscode/*
+.idea_modules/
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+# Application log
+error_log
+
 # Logs
 logs
 *.log
@@ -56,4 +69,3 @@ typings/
 
 # dotenv environment variables file
 .env
-
