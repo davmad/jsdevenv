@@ -1,25 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <% if (htmlWebpackPlugin.options.trackJSToken) { %>
-  <script type="text/javascript">window._trackJs = { token: '<%=htmlWebpackPlugin.options.trackJSToken%>' };</script>
-  <script type="text/javascript" src="https://cdn.trackjs.com/releases/current/tracker.js"></script>
-  <% } %>
+	<% if (htmlWebpackPlugin.options.trackJSToken) { %>
+	<script type="text/javascript">window._trackJs = { token: '<%=htmlWebpackPlugin.options.trackJSToken%>' };</script>
+	<script type="text/javascript" src="https://cdn.trackjs.com/releases/current/tracker.js"></script>
+	<% } %>
 	<meta charset="UTF-8">
 </head>
 <body>
-	<h1>Users</h1>
-	<table>
-		<thead>
-			<th>&nbsp;</th>
-			<th>Id</th>
-			<th>First Name</th>
-			<th>Last Name</th>
-			<th>Email</th>
-		</thead>
-		<tbody id="users">
+<h1>Users</h1>
+<table>
+	<thead>
+	<th>&nbsp;</th>
+	<th>Id</th>
+	<th>First Name</th>
+	<th>Last Name</th>
+	<th>Email</th>
+	</thead>
+	<tbody id="users">
 
-		</tbody>
-	</table>
+	</tbody>
+</table>
+
+<div>
+	<div id="calBld"></div>
+</div>
+
 </body>
 </html>

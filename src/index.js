@@ -4,8 +4,15 @@ import {getUsers, deleteUser} from './api/userApi';
 
 import numeral from 'numeral';
 
+import {getHebDate} from './zmanim';
+
+const curHebDate = getHebDate(10, 9, 2017);
+
 const courseValue = numeral(1000).format('$0,0.00');
 console.log(`I would pay ${courseValue} for this awesome course!`);    // eslint-disable-line no-console
+
+console.log(`Today Hebrew date is: ${curHebDate} !`);    // eslint-disable-line no-console
+
 
 // Populate table of users via API call
 getUsers().then(result => {
