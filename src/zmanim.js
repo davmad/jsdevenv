@@ -687,6 +687,9 @@ var civilHolidays = 0;
 
 function doCal(month, year) {
     var ret = calendar(month, year);
+
+    console.log(ret);
+
     var result = BuildLuachHTML(ret);
     document.getElementById("calBld").innerHTML = result;
 }
@@ -777,6 +780,8 @@ function BuildLuachHTML(parms)  {
     }
     result += '</tr>';
 
+    // console.log(multiLang);
+
     var cell = 1
     var cDay = 1
     var row;
@@ -787,6 +792,11 @@ function BuildLuachHTML(parms)  {
             // convert civil date to hebrew
             hebDate = civ2heb(cDay, cMonth, cYear);
             hebDay = eval(hebDate.substring(0, hebDate.indexOf(' ')));
+
+            // console.log(cDay);
+            // console.log(cMonth);
+            // console.log(cYear);
+            // console.log(hebDate);
 
             hm = hebDate.substring(hebDate.indexOf(' ')+1, hebDate.length);
             hMonth = eval(hm.substring(0, hm.indexOf(' ')));
@@ -823,14 +833,14 @@ function BuildLuachHTML(parms)  {
                 result +=   '<table BORDER=0 COLS=2 style="height:16px;width:84px;">';
                 result +=     '<tr>';
                 result +=       '<td>';
-                result +=         '<FONT face="Arial" COLOR="' + civColor + '">';
+                result +=         '<span style="font-family: Arial; color: ' + civColor + '>';
                 result +=           cDay;
-                result +=         '</font>';
+                result +=         '</span>';
                 result +=       '</td>';
                 result +=       '<td>';
-                result +=         '<FONT face="Arial" COLOR="' + hebColor + '">';
+                result +=         '<span style="font-family: Arial; color: ' + hebColor + '>';
                 result +=           '<div align=right>' + multiLang[currLang].hHebDay[hebDay] + '</div>';
-                result +=         '</FONT>';
+                result +=         '</span>';
                 result +=       '</td>';
                 result +=     '</tr>';
                 result +=   '</table>';
@@ -879,7 +889,7 @@ function BuildLuachHTML(parms)  {
 
 
 
-doCal();
+doCal(8, 2017);
 
 
 
