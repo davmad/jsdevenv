@@ -60,9 +60,9 @@ export default {
         exclude: /node_modules/,
         loaders: ['babel']
       }, {
-        test: /\.css$/,
+        test: /\.scss$/,
         exclude: /node_modules/,
-        loader: ExtractTextPlugin.extract(['css?sourceMap'])
+        loader: ExtractTextPlugin.extract(['css?sourceMap', 'sass-loader?sourceMap'])
       }
     ]
   }

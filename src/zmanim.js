@@ -688,7 +688,7 @@ var civilHolidays = 0;
 function doCal(month, year) {
     var ret = calendar(month, year);
 
-    console.log(ret);
+    console.log(ret); // eslint-disable-line no-console
 
     var result = BuildLuachHTML(ret);
     document.getElementById("calBld").innerHTML = result;
@@ -780,7 +780,7 @@ function BuildLuachHTML(parms)  {
     }
     result += '</tr>';
 
-    // console.log(multiLang);
+    // console.log(multiLang); // eslint-disable-line no-console
 
     var cell = 1
     var cDay = 1
@@ -793,10 +793,10 @@ function BuildLuachHTML(parms)  {
             hebDate = civ2heb(cDay, cMonth, cYear);
             hebDay = eval(hebDate.substring(0, hebDate.indexOf(' ')));
 
-            // console.log(cDay);
-            // console.log(cMonth);
-            // console.log(cYear);
-            // console.log(hebDate);
+            // console.log(cDay); // eslint-disable-line no-console
+            // console.log(cMonth); // eslint-disable-line no-console
+            // console.log(cYear); // eslint-disable-line no-console
+            // console.log(hebDate); // eslint-disable-line no-console
 
             hm = hebDate.substring(hebDate.indexOf(' ')+1, hebDate.length);
             hMonth = eval(hm.substring(0, hm.indexOf(' ')));

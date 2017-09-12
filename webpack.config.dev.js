@@ -28,9 +28,9 @@ export default {
                 exclude: /node_modules/,
                 loaders: ['babel']
             }, {
-                test: /\.css$/,
+                test: /\.scss$/,
                 exclude: /node_modules/,
-                loaders: ['style','css']
+                loaders: ['style','css', 'sass-loader']
             }
         ]
     }
