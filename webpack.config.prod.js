@@ -80,7 +80,7 @@ export default {
       }, {
         test: /\.scss$/,
         exclude: /node_modules/,
-        loader: ExtractTextPlugin.extract(['css?sourceMap', 'sass-loader?sourceMap'])
+        loader: ExtractTextPlugin.extract(['css?sourceMap', 'sass-loader?sourceMap', "postcss-loader"])
       }
     ]
   }

@@ -11,4 +11,11 @@ table th {
         display: flex;
         flex-flow: column;
     }
+    .merged-line {
+        padding: 3px 12px 5px;
+        display: flex;
+        .interpolate {
+            margin: 12px 3px 7px 0;
+        }
+    }
 }
