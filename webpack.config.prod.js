@@ -2,6 +2,8 @@ import path from 'path';
 import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import webpackMd5Hash from 'webpack-md5-hash';
+import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
+const cssnano = require('cssnano');
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 export default {
@@ -21,7 +23,23 @@ export default {
   plugins: [
     // Generate an external css file with a hash in the filename
     new ExtractTextPlugin('[name].[contenthash].css'),
-    // Hash the files using MD5 so that names change when the content changes.
+
+      new OptimizeCSSAssetsPlugin({
+          cssProcessor: cssnano,
+          cssProcessorOptions: {
+              options: {
+                  discardComments: {
+                      removeAll: true
+                  },
+                  // Run cssnano in safe mode to avoid
+                  // potentially unsafe transformations.
+                  safe: true
+              }
+          },
+          canPrint: false
+      }),
+
+      // Hash the files using MD5 so that names change when the content changes.
     new webpackMd5Hash(),
     // Use CommonChunkPlugin to create a seperate bundle
     // of vendor libraries so that they're cached seperatly.
